@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Дешифровка писем</title>
+    <link rel="icon" href="./svg/noun-letter-6440474.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/noun-letter-6440474.png" />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!--<link rel="stylesheet" href="./styles/animations.css" />-->
+    <!--<link rel="stylesheet" href="./styles/themes.css" />-->
+    <!--<script src="./scripts/set-theme.js"></script>-->
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="title">Шифрование&nbsp;писем</h1>
+    </header>
+
+    <main class="main">
+
+      <form method="get" class="main_form main_form_input_letter" action="" autocomplete="off" accept-charset="UTF-8">
+        <label class="main_subtitle" for="letter">Имеющееся письмо</label>
+        <div class="letter_background">
+          <input required class="main_form_letter_content input_letter_greeting" autocomplete="off" name="hello_phrase" id="hello_phrase" type="text" min="10" max="30" placeholder="Здравствуй, дорогой друг!"></input>
+          <textarea required autocomplete="off" class="main_form_letter_content input_letter_main_content" maxlength="1500" minlength="20" rows="30" name="input_letter" id="letter" placeholder="Давно хотел тебе написать, да все дела-дела..."></textarea>
+          <textarea required autocomplete="off" class="main_form_letter_content input_letter_farewell" maxlength="60" minlength="4" rows="2" name="input_farewell" id="farewell" placeholder="С наилучшими пожеланиями,
+          безумный путешественник"></textarea>
+        </div>
+        <button class="en-de_code_button button" type="submit">
+          <span class="button_text">Преобразовать</span>
+        </button>
+        <button class="clean_button button" type="reset">
+          <span class="button_text">Взять новый лист</span>
+        </button>
+      </form>
+      
+      <form method="" class="main_form main_form_output_letter" action="">
+        <label class="main_subtitle">Преобразованное письмо</label>
+        <div class="letter_background">
+          <input disabled class="main_form_letter_content output_letter_greeting" autocomplete="off" name="output_hello_phrase" type="text" min="10" max="30"></input>
+          <textarea disabled autocomplete="off" class="main_form_letter_content output_letter_main_content" maxlength="1500" minlength="20" rows="30" name="output_letter"></textarea>
+          <textarea disabled autocomplete="off" class="main_form_letter_content output_letter_farewell" maxlength="60" minlength="4" rows="2" name="output_farewell"></textarea>
+        </div>
+      </form>
+      
+    </main>
+    <footer class="footer">
+      <p>@ Роза Блэк и Эндрю Асториас</p>
+    </footer>
+
+    <script src="./scripts/decoder.js"></script>
+  </body>
+</html>

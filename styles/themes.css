@@ -1,0 +1,111 @@
+/* В этом файле вы опишете значения переменных в разных цветовых схемах.
+Придерживайтесь такого именования классов:
+✦ theme-dark — класс тёмной темы
+✦ theme-light — класс светлой темы
+✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
+*/
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main_label_font-var-settings: 785;
+    --main_text_font-var-settings: 465;
+
+    --background-color: #000;
+    --color: #00cc14;
+    --button_text_color: #00cc14;
+    --heart_contour_color: #00cc14;
+
+    --background-image: repeating-linear-gradient(
+        transparent 2px,
+        #000 2px 4px,
+        transparent 4px 6px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        #000 2px,
+        transparent 2px 4px,
+        #000 4px 6px
+      ),
+      linear-gradient(#007f0c, #004306);
+
+    /* фильтры картинок */
+    --filter_sepia: sepia(49%);
+    --filter_sepia_invert: sepia(11%) invert(1);
+    --filter_hue-rotate: hue-rotate(265deg);
+    --filter_satur_bright_contrast: saturate(113%) brightness(87%)
+      contrast(184%);
+    --filter_blur: blur(2px);
+    --filter_grayscale: grayscale(52%);
+    --filter_invert_saturate: invert(0.8) saturate(144%);
+    --filter_contrast_opacity: contrast(60%) opacity(0.4);
+    --image_shadow_color: rgb(218 218 218 / 63%);
+  }
+}
+
+.theme-light {
+  --main_label_font-var-settings: 700;
+  --main_text_font-var-settings: 400;
+
+  --background-color: #fff;
+  --color: #000;
+  --button_text_color: #ffffff;
+  --heart_contour_color: #000000;
+
+  --background-image: repeating-linear-gradient(
+      transparent 2px,
+      #d3d3d3 2px 4px,
+      transparent 4px 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 2px,
+      transparent 2px 4px,
+      #d3d3d3 4px 6px
+    ),
+    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
+
+  /* фильтры картинок */
+  --filter_sepia: sepia(70%);
+  --filter_sepia_invert: sepia(40%) invert(1);
+  --filter_hue-rotate: hue-rotate(197deg);
+  --filter_satur_bright_contrast: saturate(141%) brightness(75%) contrast(106%);
+  --filter_blur: blur(1px);
+  --filter_grayscale: grayscale(68%);
+  --filter_invert_saturate: invert(0.2) saturate(72%);
+  --filter_contrast_opacity: contrast(81%) opacity(0.6);
+  --image_shadow_color: rgba(0, 0, 0, 54.61);
+}
+
+.theme-dark {
+  --main_label_font-var-settings: 785;
+  --main_text_font-var-settings: 465;
+
+  --background-color: #000;
+  --color: #00cc14;
+  --button_text_color: #00cc14;
+  --heart_contour_color: #00cc14;
+
+  --background-image: repeating-linear-gradient(
+      transparent 2px,
+      #000 2px 4px,
+      transparent 4px 6px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      #000 2px,
+      transparent 2px 4px,
+      #000 4px 6px
+    ),
+    linear-gradient(#007f0c, #004306);
+
+  /* фильтры картинок */
+  --filter_sepia: sepia(49%);
+  --filter_sepia_invert: sepia(11%) invert(1);
+  --filter_hue-rotate: hue-rotate(265deg);
+  --filter_satur_bright_contrast: saturate(113%) brightness(87%) contrast(184%);
+  --filter_blur: blur(2px);
+  --filter_grayscale: grayscale(52%);
+  --filter_invert_saturate: invert(0.8) saturate(144%);
+  --filter_contrast_opacity: contrast(60%) opacity(0.4);
+  --image_shadow_color: rgb(218 218 218 / 63%);
+}

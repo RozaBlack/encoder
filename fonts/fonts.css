@@ -1,0 +1,49 @@
+/* В этом файле вы импортируете все шрифты для сайта. Один из них вариативный и требует особенной настройки */
+@font-face {
+  font-family: "Alexander";
+  src: url(./Alexander.woff) format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Caveat";
+  src: url(./Caveat-Regular.woff) format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Caveat";
+  src: url(./Caveat-Regular.woff) format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HattoriHanzo";
+  src: url(./HattoriHanzo-Light.woff) format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "HattoriHanzo";
+  src: url(./HattoriHanzo-Light.woff) format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AnselmSans";
+  src: url(./AnselmSans-MediumItalic.woff) format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "AnselmSans";
+  src: url(./AnselmSans-BoldItalic.woff) format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
