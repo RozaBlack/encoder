@@ -4,7 +4,7 @@ const mainFormOutputLetter = document.querySelector('.main_form_output_letter');
 //const clearButton = mainFormOutputLetter.querySelector('.clear_button');
 
 const alphabetBitDepth = 5;
-const alphabet = [' ', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ',', '?', '!', ':', ';', '"', '(', ')', '-', '+', '=', '/', '|', '\n', '\\', 's', 't', 'r', 'n'];
+const alphabet = [' ', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ',', '?', '!', ':', ';', '"', '(', ')', '-', '+', '=', '/', '|', '\n', '\\', '«', '»', '_', '\''];
 const consonants = ['б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'];
 const vowels = ['а', 'у', 'о', 'и', 'э', 'ы', 'я', 'ю', 'е', 'ё'];
 const otherLetters = ['ъ', 'ь'];
@@ -15,9 +15,9 @@ mainFormInputLetter.addEventListener('reset', function(evt) {
   mainFormInputLetter.querySelector('.input_letter_main_content').value = '';
   mainFormInputLetter.querySelector('.input_letter_farewell').value = '';
   mainFormOutputLetter.querySelector('.output_letter_greeting').value = '';
-  mainFormOutputLetter.querySelector('.output_letter_main_content').value = '';
-  mainFormOutputLetter.querySelector('.output_letter_farewell').value = '';
-  mainFormOutputLetter.querySelector('.letter_background::before').style = 'opacity: 0.5';
+  mainFormOutputLetter.querySelector('.output_letter_main_content').textContent = '';
+  mainFormOutputLetter.querySelector('.output_letter_farewell').textContent = '';
+  mainFormOutputLetter.querySelector('.letter_background').classList.remove('letter_background_active');
 });
 
 mainFormInputLetter.addEventListener('submit', function(evt) {
@@ -27,12 +27,34 @@ mainFormInputLetter.addEventListener('submit', function(evt) {
   const inputLetterMainContent = mainFormInputLetter.querySelector('.input_letter_main_content').value;
   const inputLetterFarewell = mainFormInputLetter.querySelector('.input_letter_farewell').value;
 
+  const inputLetterGreetingCorrect = checkContent(inputLetterGreeting);
+  if(inputLetterGreetingCorrect === false) {
+    alert('Приветственная фраза содержит недопустимые символы');
+    return false;
+  }
+  
+  const inputLetterMainContentCorrect = checkContent(inputLetterMainContent);
+  if(inputLetterMainContentCorrect === false) {
+    alert('Основной текст письма содержит недопустимые символы');
+    return false;
+  }
+
   const fullKey = getFullKey(inputLetterGreeting, inputLetterMainContent.length);
   const convertedLetter = enDeCodeText(fullKey, inputLetterMainContent);
 
   addLetterToResultForm(inputLetterGreeting, convertedLetter, inputLetterFarewell);
 
 });
+
+function checkContent(text) {
+  text = text.toLowerCase();
+  for(let i = 0; i < text.length; i++) {
+    if (alphabet.find(symbol => symbol === text[i]) === undefined) {
+      return false;
+    };
+  };
+  return true;
+};
 
 function getFullKey(greetingPhrase, mainLetterTextLen) {
   const greetingPhraseMassive = transformTextToMassive(greetingPhrase);
@@ -99,8 +121,9 @@ function enDeCodeText(fullKey, inputLetterText) {
   const letterLength = inputLetterText.length;
   inputLetterText = inputLetterText.toLowerCase();
   const convertedLetter = XORconverter(inputLetterText, letterLength, fullKey).join('');
+  const transformConvertedLetters = addUppercaseLetters(convertedLetter);
 
-  return convertedLetter;
+  return transformConvertedLetters;
 };
 
 function XORconverter(text, textLength, fullKey) {
@@ -111,16 +134,36 @@ function XORconverter(text, textLength, fullKey) {
   return convertedText;
 };
 
+function addUppercaseLetters(text) {
+  let i = 0;
+  const textLen = text.length;
+  text = text[0].toUpperCase() + text.slice(1);
+  const punctuationSymb = ['.', '!', '?', '.', '?'];
+  const separators = [' ', '\n'];
+  punctuationSymb.forEach(function(punct) {
+    separators.forEach(function(sep) {
+      i = 0;
+      while(text.slice(i, textLen - 1).indexOf(punct + sep) !== -1) {
+        i = i + text.slice(i, textLen - 1).indexOf(punct + sep) + 2;
+        text = text.slice(0, i) + text[i].toUpperCase() + text.slice(i+1, textLen-1);
+      }
+    });
+  });
+
+  return text;
+}
+
 function addLetterToResultForm(inputLetterGreeting, convertedLetter, inputLetterFarewell) {
   const outputLetterGreeting = mainFormOutputLetter.querySelector('.output_letter_greeting');
   const outputLetterMainContent = mainFormOutputLetter.querySelector('.output_letter_main_content');
   const outputLetterFarewell = mainFormOutputLetter.querySelector('.output_letter_farewell');
   outputLetterGreeting.value = inputLetterGreeting;
-  outputLetterMainContent.value = convertedLetter;
-  outputLetterFarewell.value = inputLetterFarewell;
+  outputLetterMainContent.textContent = convertedLetter;
+  outputLetterFarewell.textContent = inputLetterFarewell;
 
   outputLetterGreeting.style = 'color: var(--active_color);';
   outputLetterMainContent.style = 'color: var(--active_color);';
   outputLetterFarewell.style = 'color: var(--active_color);';
-  mainFormOutputLetter.querySelector('.letter_background::before').style = 'opacity: 0.65';
+
+  mainFormOutputLetter.querySelector('.letter_background').classList.add('letter_background_active');
 }

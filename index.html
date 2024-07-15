@@ -25,9 +25,9 @@
       <form method="get" class="main_form main_form_input_letter" action="" autocomplete="off" accept-charset="UTF-8">
         <label class="main_subtitle" for="letter">Имеющееся письмо</label>
         <div class="letter_background">
-          <input required class="main_form_letter_content input_letter_greeting" autocomplete="off" name="hello_phrase" id="hello_phrase" type="text" min="10" max="30" placeholder="Здравствуй, дорогой друг!"></input>
-          <textarea required autocomplete="off" class="main_form_letter_content input_letter_main_content" maxlength="1500" minlength="20" rows="30" name="input_letter" id="letter" placeholder="Давно хотел тебе написать, да все дела-дела..."></textarea>
-          <textarea required autocomplete="off" class="main_form_letter_content input_letter_farewell" maxlength="60" minlength="4" rows="2" name="input_farewell" id="farewell" placeholder="С наилучшими пожеланиями,
+          <input required class="main_form_letter_content input_letter_greeting letter_not_main_content" autocomplete="off" name="hello_phrase" id="hello_phrase" type="text" min="10" max="30" placeholder="Здравствуй, дорогой друг!"></input>
+          <textarea required autocomplete="off" class="main_form_letter_content input_letter_main_content" minlength="20" rows="30" name="input_letter" id="letter" placeholder="Давно хотел тебе написать, да все дела-дела..."></textarea>
+          <textarea required autocomplete="off" class="main_form_letter_content input_letter_farewell letter_not_main_content" maxlength="60" minlength="4" rows="4" name="input_farewell" id="farewell" placeholder="С наилучшими пожеланиями,
           безумный путешественник"></textarea>
         </div>
         <button class="en-de_code_button button" type="submit">
@@ -41,9 +41,9 @@
       <form method="" class="main_form main_form_output_letter" action="">
         <label class="main_subtitle">Преобразованное письмо</label>
         <div class="letter_background">
-          <input disabled class="main_form_letter_content output_letter_greeting" autocomplete="off" name="output_hello_phrase" type="text" min="10" max="30"></input>
-          <textarea disabled autocomplete="off" class="main_form_letter_content output_letter_main_content" maxlength="1500" minlength="20" rows="30" name="output_letter"></textarea>
-          <textarea disabled autocomplete="off" class="main_form_letter_content output_letter_farewell" maxlength="60" minlength="4" rows="2" name="output_farewell"></textarea>
+          <input disabled class="main_form_letter_content output_letter_greeting letter_not_main_content" autocomplete="off" name="output_hello_phrase" type="text" min="10" max="30"></input>
+          <textarea disabled autocomplete="off" class="main_form_letter_content output_letter_main_content" minlength="20" rows="30" name="output_letter"></textarea>
+          <textarea disabled autocomplete="off" class="main_form_letter_content output_letter_farewell letter_not_main_content" maxlength="60" minlength="4" rows="4" name="output_farewell"></textarea>
         </div>
       </form>
       
