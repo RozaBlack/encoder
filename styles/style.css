@@ -53,6 +53,10 @@
   position: relative;
 }
 
+.header__theme-menu-list .button {
+  min-inline-size: 30px;
+}
+
 .header__theme-menu-button_active {
   font-weight: var(--accent_font-weight);
 }
