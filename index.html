@@ -11,16 +11,145 @@
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
-    <!--<link rel="stylesheet" href="./styles/animations.css" />-->
-    <!--<link rel="stylesheet" href="./styles/themes.css" />-->
-    <!--<script src="./scripts/set-theme.js"></script>-->
+    <link rel="stylesheet" href="./styles/themes.css" />
   </head>
   <body class="page">
     <header class="header">
+      <nav class="header__theme-menu">
+        <ul class="header__theme-menu-list">
+          <li class="header__theme-menu-item">
+            <button
+              class="header__theme-menu-button header__theme-menu-button_type_light button"
+            >
+            <span class="button_text">День</span>
+            </button>
+          </li>
+          <li class="header__theme-menu-item">
+            <button
+              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto button"
+              disabled
+            >
+            <span class="button_text">Авто</span>
+            </button>
+          </li>
+          <li class="header__theme-menu-item">
+            <button
+              class="header__theme-menu-button header__theme-menu-button_type_dark button"
+            >
+            <span class="button_text">Ночь</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
       <h1 class="title">Шифрование&nbsp;писем</h1>
     </header>
 
     <main class="main">
+      <article  class="main_information">
+        <details class="main_details description_details">
+          <summary class="main_subtitle description_question">Описание страницы</summary>
+        </details>
+        <div class="main_aswer description_answer">
+          <p class="information_text">Целью данной страницы является обеспечение тайной переписки между героями D&D.</p>
+          <p class="information_text">Страница осуществляет автоматические шафрование и расшифровку писем, которые герои поизводят вручную. Используемый метод шифрования, а также основы бинарной логики герои узнали от автоматонов во время одного из своих путешествий.</p>
+          <p class="information_text">Вследствии того, что в их мире вычислительные машины еще не изобретены и, следовательно, нет общепринятых кодировок символов, они создали свою кодировку, содержащую 64 символа. Причем, поскольку герои общаются на одном языке, "Общем", их кодировка содержит символы только кириллические символы (как в языке игроков). Также, поскольку герои способны самостоятельно определить в каком случае какой регистр букв использовался, кодировка не содержит отдельных кодов для строчных и заглавных букв. Однако, данная страница способна работать как со строчными буквами, так и с заглавными.</p>
+          <ul class="symbols_kodes_table">
+            <li class="symbol_kode"><span>0</span> <span>' '</span><span>000000</span></li>
+            <li class="symbol_kode"><span>1</span> <span>а</span> <span>000001</span></li>
+            <li class="symbol_kode"><span>2</span> <span>б</span> <span>000010</span></li>
+            <li class="symbol_kode"><span>3</span> <span>в</span> <span>000011</span></li>
+            <li class="symbol_kode"><span>4</span> <span>г</span> <span>000100</span></li>
+            <li class="symbol_kode"><span>5</span> <span>д</span> <span>000101</span></li>
+            <li class="symbol_kode"><span>6</span> <span>е</span> <span>000110</span></li>
+            <li class="symbol_kode"><span>7</span> <span>ё</span> <span>000111</span></li>
+            <li class="symbol_kode"><span>8</span> <span>ж</span> <span>001000</span></li>
+            <li class="symbol_kode"><span>9</span> <span>з</span> <span>001001</span></li>
+            <li class="symbol_kode"><span>10</span><span>и</span> <span>001010</span></li>
+            <li class="symbol_kode"><span>11</span><span>й</span> <span>001011</span></li>
+            <li class="symbol_kode"><span>12</span><span>к</span> <span>001100</span></li>
+            <li class="symbol_kode"><span>13</span><span>л</span> <span>001101</span></li>
+            <li class="symbol_kode"><span>14</span><span>м</span> <span>001110</span></li>
+            <li class="symbol_kode"><span>15</span><span>н</span> <span>001111</span></li>
+            <li class="symbol_kode"><span>16</span><span>о</span> <span>010000</span></li>
+            <li class="symbol_kode"><span>17</span><span>п</span> <span>010001</span></li>
+            <li class="symbol_kode"><span>18</span><span>р</span> <span>010010</span></li>
+            <li class="symbol_kode"><span>19</span><span>с</span> <span>010011</span></li>
+            <li class="symbol_kode"><span>20</span><span>т</span> <span>010100</span></li>
+            <li class="symbol_kode"><span>21</span><span>у</span> <span>010101</span></li>
+            <li class="symbol_kode"><span>22</span><span>ф</span> <span>010110</span></li>
+            <li class="symbol_kode"><span>23</span><span>х</span> <span>010111</span></li>
+            <li class="symbol_kode"><span>24</span><span>ц</span> <span>011000</span></li>
+            <li class="symbol_kode"><span>25</span><span>ч</span> <span>011001</span></li>
+            <li class="symbol_kode"><span>26</span><span>ш</span> <span>011010</span></li>
+            <li class="symbol_kode"><span>27</span><span>щ</span> <span>011011</span></li>
+            <li class="symbol_kode"><span>28</span><span>ъ</span> <span>011100</span></li>
+            <li class="symbol_kode"><span>29</span><span>ы</span> <span>011101</span></li>
+            <li class="symbol_kode"><span>30</span><span>ь</span> <span>011110</span></li>
+            <li class="symbol_kode"><span>31</span><span>э</span> <span>011111</span></li>
+            <li class="symbol_kode"><span>32</span><span>ю</span> <span>100000</span></li>
+            <li class="symbol_kode"><span>33</span><span>я</span> <span>100001</span></li>
+            <li class="symbol_kode"><span>34</span><span>0</span> <span>100010</span></li>
+            <li class="symbol_kode"><span>35</span><span>1</span> <span>100011</span></li>
+            <li class="symbol_kode"><span>36</span><span>2</span> <span>100100</span></li>
+            <li class="symbol_kode"><span>37</span><span>3</span> <span>100101</span></li>
+            <li class="symbol_kode"><span>38</span><span>4</span> <span>100110</span></li>
+            <li class="symbol_kode"><span>39</span><span>5</span> <span>100111</span></li>
+            <li class="symbol_kode"><span>40</span><span>6</span> <span>101000</span></li>
+            <li class="symbol_kode"><span>41</span><span>7</span> <span>101001</span></li>
+            <li class="symbol_kode"><span>42</span><span>8</span> <span>101010</span></li>
+            <li class="symbol_kode"><span>43</span><span>9</span> <span>101011</span></li>
+            <li class="symbol_kode"><span>44</span><span>.</span> <span>101100</span></li>
+            <li class="symbol_kode"><span>45</span><span>,</span> <span>101101</span></li>
+            <li class="symbol_kode"><span>46</span><span>?</span> <span>101110</span></li>
+            <li class="symbol_kode"><span>47</span><span>!</span> <span>101111</span></li>
+            <li class="symbol_kode"><span>48</span><span>:</span> <span>110000</span></li>
+            <li class="symbol_kode"><span>49</span><span>;</span> <span>110001</span></li>
+            <li class="symbol_kode"><span>50</span><span>"</span> <span>110010</span></li>
+            <li class="symbol_kode"><span>51</span><span>(</span> <span>110011</span></li>
+            <li class="symbol_kode"><span>52</span><span>)</span> <span>110100</span></li>
+            <li class="symbol_kode"><span>53</span><span>-</span> <span>110101</span></li>
+            <li class="symbol_kode"><span>54</span><span>+</span> <span>110110</span></li>
+            <li class="symbol_kode"><span>55</span><span>=</span> <span>110111</span></li>
+            <li class="symbol_kode"><span>56</span><span>/</span> <span>111000</span></li>
+            <li class="symbol_kode"><span>57</span><span>|</span><span>111001</span></li>
+            <li class="symbol_kode"><span>58</span><span>\n</span> <span>111010</span></li>
+            <li class="symbol_kode"><span>59</span><span>\</span> <span>111011</span></li>
+            <li class="symbol_kode"><span>60</span><span>«</span> <span>111100</span></li>
+            <li class="symbol_kode"><span>61</span><span>»</span> <span>111101</span></li>
+            <li class="symbol_kode"><span>62</span><span>_</span> <span>111110</span></li>
+            <li class="symbol_kode"><span>63</span><span>'</span> <span>111111</span></li>
+          </ul>
+          <p class="information_text">Для шифрования герои выбрали метод исключающего "ИЛИ" (Шифр Вермана или XOR-шифрование) о котором можно прочитать <a>здесь</a>. Шифрование этим методом происходит при помощи ключа. Герои договорились шифровать ключ в приветственной фразе письма следующим образом:</p>
+          <ol class="information_list">
+            <li>количество символов в приветственной фразе;</li>
+            <li>количество букв в приветственной фразе;</li>
+            <li>количество неповторяющихся гласных;</li>
+            <li>количество повторяющихся согласных;</li>
+            <li>количество повторяющихся гласных + разрядность кода символа (6);</li>
+            <li>количество неповторяющихся согласных + разрядность кода символа (6);</li>
+            <li>код символа, стоящего в конце приветственной фразы.</li>
+          </ol>
+          <p class="information_text">Каждое получившееся число - один символ ключа. Ключ используется циклично на всем тексте письма.</p>
+        </div>
+      </article>
+
+      <article  class="main_information">
+        <details class="main_details instrucrion_details">
+          <summary class="main_subtitle instrucrion_question">Инструкция по использованию страницы</summary>
+        </details>
+        <div class="main_aswer instrucrion_answer">
+          <p class="information_text">Для того, чтобы зашифровать или расшифровать письмо, необходимо:</p>
+          <ol class="information_list">
+            <li>ввести приветственную фразу вместо "Здравствуй, дорогой друг!". Длинна фразы должна быть от 10 до 30 символов;</li>
+            <li>ввести основное содержимое письма (зашифрованное или нет) вместо "Давно хотел тебе написать, да все дела-дела...". Основное содержимое письма не должно быть от 20 до 6000 символов;</li>
+            <li>ввести прощальную фразу вместо "С наилучшими пожеланиями, безумный путешественник". Прошальная враза не должна быть от 4 до 60 символов;</li>
+            <li>нажать на кнопку "Преобразовать";</li>
+            <li>смотреть результат в разделе "Преобразованное письмо".</li>
+          </ol>
+          <p class="information_text"><span class="important">Важно!</span> При написании письма можно использовать только символы из созданной героями кодировки. Также допускается использование заглавных букв.</p>
+          <p class="information_text">Для того, чтобы убрать содержимое обоих листов, необходимо нажать на кнопку "Взять новый лист".</p>
+        </div>
+      </article>
 
       <form method="get" class="main_form main_form_input_letter" action="" autocomplete="off" accept-charset="UTF-8">
         <label class="main_subtitle" for="letter">Имеющееся письмо</label>
@@ -38,7 +167,7 @@
         </button>
       </form>
       
-      <form method="" class="main_form main_form_output_letter" action="">
+      <form method="" class="main_form main_form_output_letter"  action="" autocomplete="off" accept-charset="UTF-8">
         <label class="main_subtitle">Преобразованное письмо</label>
         <div class="letter_background">
           <input disabled class="main_form_letter_content output_letter_greeting letter_not_main_content" autocomplete="off" name="output_hello_phrase" type="text" min="10" max="30"></input>

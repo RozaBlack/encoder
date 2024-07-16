@@ -47,6 +47,18 @@ ol {
   list-style: none;
 }
 
+button {
+  display: block;
+}
+
+/*summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+} */
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
