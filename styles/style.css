@@ -102,7 +102,7 @@
 
 .symbols_kodes_table {
   display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 2px;
     padding: 2px;
     align-items: stretch;
@@ -150,11 +150,19 @@
   .description_details[open] + .description_answer {
     max-height: 2300px;
   }
+
+  .symbols_kodes_table {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  }
 }
 
 @media (width >= 1000px) {
   .description_details[open] + .description_answer {
     max-height: 1800px;
+  }
+
+  .symbols_kodes_table {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   }
 }
 
@@ -164,7 +172,7 @@
   transition: max-height 1s linear;
 }
 .instrucrion_details[open] + .instrucrion_answer {
-  max-height: 900px;
+  max-height: 1200px;
 }
 
 @media (700px <= width < 1000px) {
