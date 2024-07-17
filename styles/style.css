@@ -143,7 +143,7 @@
 }
 
 .description_details[open] + .description_answer {
-  max-height: 3600px;
+  max-height: 4000px;
 }
 
 @media (700px <= width < 1000px) {
