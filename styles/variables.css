@@ -1,6 +1,6 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --title_subtitle_font-family: "AnselmSans", sans-serif;
+  --title_subtitle_font-family: "AnselmSans", "Caveat", "HattoriHanzo", "Alexander", sans-serif;
   --title_font-size: clamp(2.375rem, calc(0.4666rem + 8.1425vw), 4.375rem);
   --main_font-size: clamp(1.375rem, calc(1.0652rem + 1.1662vw), 1.625rem);
   --subtitles_font-size: clamp(1.375rem, calc(0.7216rem + 3.267vw), 2.8125rem);;
