@@ -14,7 +14,7 @@
 }
 
 @font-face {
-  font-family: "Caveat";
+  font-family: "Caveat_bold";
   src: url(./Caveat-Regular.woff) format("woff");
   font-weight: 700;
   font-display: swap;
@@ -28,7 +28,7 @@
 }
 
 @font-face {
-  font-family: "HattoriHanzo";
+  font-family: "HattoriHanzo_bold";
   src: url(./HattoriHanzo-Light.woff) format("woff");
   font-weight: 700;
   font-display: swap;
@@ -42,7 +42,7 @@
 }
 
 @font-face {
-  font-family: "AnselmSans";
+  font-family: "AnselmSans_bold";
   src: url(./AnselmSans-BoldItalic.woff) format("woff");
   font-weight: 700;
   font-style: italic;
