@@ -53,10 +53,6 @@
   position: relative;
 }
 
-.header__theme-menu-list .button {
-  min-inline-size: 30px;
-}
-
 .header__theme-menu-button_active {
   font-weight: var(--accent_font-weight);
 }
@@ -276,6 +272,9 @@
   background-color: transparent;
   transition: transform 1s ease;
   transform-origin: center center;
+}
+
+.main_button {
   min-inline-size: 162px;
 }
 
@@ -324,6 +323,11 @@
 .clean_button {
   grid-column: 3/5;
   grid-row: 3/4;
+}
+
+/* стилизация ссылок */
+.main_link {
+  
 }
 
 /* подвал сайта */
